@@ -8,21 +8,39 @@
 </head>
 <body>
     <header>
+        <img src="/Users/macbook/hbnb-public/03-frontend/base_files/logo.png" class="logo" alt="Application Logo">
         <nav>
-            <a href="login.html" id="login-link">Login</a>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="login-button">Login</a>
         </nav>
     </header>
+    
     <main>
-        <section id="filter">
+        <section id="filter" class="filter-section">
             <label for="country-filter">Filter by Country:</label>
             <select id="country-filter">
                 <!-- Options will be populated dynamically -->
             </select>
         </section>
-        <section id="places-list">
-            <!-- List of places will be populated dynamically -->
+        
+        <section id="places-list" class="places-list">
+            <div class="place-card">
+                <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/7/55fa8e40e0bd188a2368d55b4b547eeb812fabfd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240729%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240729T071021Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7d08bfdaa71ac4a6cd900d58cfaa576242b0f4f0fc651871dafb5a1fb0aa2d65" class="place-image" alt="Place Image">
+                <div class="place-info">
+                    <h3>Place Name</h3>
+                    <p>Price per night: $100</p>
+                    <p>Location: City, Country</p>
+                    <button class="details-button">View Details</button>
+                </div>
+            </div>
+            <!-- Repeat similar blocks for more places -->
         </section>
     </main>
+    
+    <footer>
+        <p>All rights reserved.</p>
+    </footer>
+    
     <script src="scripts.js"></script>
 </body>
 </html>

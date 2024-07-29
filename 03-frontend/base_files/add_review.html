@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Review</title>
+    <title>List of Places</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,20 +16,24 @@
     </header>
     
     <main>
-        <section class="add-review-section">
-            <form id="review-form">
-                <h2>Add a Review</h2>
-                <label for="place">Place:</label>
-                <input type="text" id="place" name="place" readonly>
-                
-                <label for="review">Review:</label>
-                <textarea id="review" name="review" required></textarea>
-                
-                <label for="rating">Rating:</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" required>
-                
-                <button type="submit">Submit</button>
-            </form>
+        <section id="filter" class="filter-section">
+            <label for="country-filter">Filter by Country:</label>
+            <select id="country-filter">
+                <!-- Options will be populated dynamically -->
+            </select>
+        </section>
+        
+        <section id="places-list" class="places-list">
+            <div class="place-card">
+                <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/7/d2286ac6373f19b827abece3a7d679a66cb92994.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240729%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240729T071021Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=33b395a3d4408a3c163fb0462392ffef5a652c9dece7edc72abb31379c12de5a" class="place-image" alt="Place Image">
+                <div class="place-info">
+                    <h3>Place Name</h3>
+                    <p>Price per night: $100</p>
+                    <p>Location: City, Country</p>
+                    <button class="details-button">View Details</button>
+                </div>
+            </div>
+            <!-- Repeat similar blocks for more places -->
         </section>
     </main>
     

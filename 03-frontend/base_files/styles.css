@@ -1,0 +1,159 @@
+/* Réinitialisation et styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Vous pouvez changer cette police selon vos préférences */
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Couleur de fond par défaut, modifiable */
+}
+
+/* Typographie */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Disposition du Layout */
+header, footer {
+    background-color: #f8f8f8; /* Couleur de fond pour header et footer */
+    padding: 20px;
+    text-align: center;
+}
+
+header img.logo {
+    max-width: 150px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333; /* Couleur de texte pour les liens */
+}
+
+nav a.login-button {
+    background-color: #007BFF; /* Couleur de fond pour le bouton de connexion */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav a.login-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol pour le bouton de connexion */
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f1f1f1; /* Couleur de fond pour le footer */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Composants */
+button {
+    background-color: #28a745; /* Couleur de fond des boutons */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Couleur de fond au survol des boutons */
+}
+
+/* Styles Spécifiques aux Pages */
+#index-page .filter-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#index-page .places-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.place-card {
+    border: 1px solid #ddd; /* Bordure des cartes */
+    border-radius: 10px; /* Bordure arrondie des cartes */
+    margin: 20px; /* Marge autour des cartes */
+    padding: 10px; /* Rembourrage à l'intérieur des cartes */
+    width: 300px;
+    text-align: center;
+    background-color: #fff; /* Couleur de fond des cartes */
+}
+
+.place-image {
+    max-width: 100%;
+    border-radius: 10px; /* Bordure arrondie pour les images des cartes */
+}
+
+.place-info {
+    margin-top: 10px;
+}
+
+.details-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.details-button:hover {
+    background-color: #218838;
+}
+
+.add-review-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-page form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Médias Queries */
+@media (max-width: 768px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    nav a {
+        margin-left: 10px;
+    }
+
+    .place-card {
+        width: 100%;
+    }
+
+    .add-review-section {
+        width: 90%;
+    }
+}
