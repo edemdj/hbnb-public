@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icon.png" type="image/png">
+    <title>Login - Airbnb</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" type="image/ico">
 </head>
 <body>
     <header>
-        <img src="logo.png" class="logo" alt="Application Logo">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html" class="login-button">Login</a>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <a href="{{ url_for('index') }}" id="home-link">Home</a>
+            <a href="{{ url_for('login_page') }}" id="login-link">Login</a>
         </nav>
     </header>
-    
     <main>
-        <section class="login-section">
+        <div class="login-container">
             <form id="login-form">
                 <h2>Login</h2>
                 <label for="email">Email:</label>
@@ -28,13 +27,13 @@
                 
                 <button type="submit">Login</button>
             </form>
-        </section>
+        </div>
     </main>
-    
+    <!-- Footer -->
     <footer>
-        <p>All rights reserved.</p>
+        <div></div>
+        <a>© 2024 HBnB Evolution. All rights reserved</a>
     </footer>
-    
-    <script src="scripts.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

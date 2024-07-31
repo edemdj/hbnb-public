@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Places</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icon.png" type="image/png">
+    <title>Find Accommodations on Airbnb</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" type="image/ico">
 </head>
 <body>
     <header>
-        <img src="/Users/macbook/hbnb-public/03-frontend/base_files/logo.png" class="logo" alt="Application Logo">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html" class="login-button">Login</a>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <a href="{{ url_for('place_page') }}" id="place">Place</a>
+            <a href="{{ url_for('login_page') }}" id="login-link">Login</a>
         </nav>
     </header>
-    
     <main>
-        <section id="filter" class="filter-section">
-            <label for="country-filter">Filter by Country:</label>
+        <h2>Available Places</h2>
+        <section id="filter">
+            <label for="country-filter">Filter by country:</label>
             <select id="country-filter">
-                <!-- Options will be populated dynamically -->
+                <option value="1">All</option>
             </select>
         </section>
-        
-        <section id="places-list" class="places-list">
+        <section id="places-list">
             <div class="place-card">
-                <img src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2024/7/55fa8e40e0bd188a2368d55b4b547eeb812fabfd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240729%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240729T071021Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7d08bfdaa71ac4a6cd900d58cfaa576242b0f4f0fc651871dafb5a1fb0aa2d65" class="place-image" alt="Place Image">
-                <div class="place-info">
-                    <h3>Place Name</h3>
-                    <p>Price per night: $100</p>
-                    <p>Location: City, Country</p>
-                    <button class="details-button">View Details</button>
-                </div>
+                <h3>Beautiful Beach House</h3>
+                <p>Price per night: $150</p>
+                <p>Location: Los Angeles, United States</p>
+                <button>View Details</button>
             </div>
-            <!-- Repeat similar blocks for more places -->
+            <div class="place-card">
+                <h3>Cozy Cabin</h3>
+                <p>Price per night: $100</p>
+                <p>Location: Toronto, Canada</p>
+                <button>View Details</button>
+            </div>
+            <div class="place-card">
+                <h3>Modern Apartment</h3>
+                <p>Price per night: $200</p>
+                <p>Location: New York, United States</p>
+                <button>View Details</button>
+            </div>
         </section>
     </main>
-    
     <footer>
-        <p>All rights reserved.</p>
+        <p>© 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
-    
-    <script src="scripts.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
