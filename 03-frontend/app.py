@@ -15,6 +15,7 @@ def login():
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
+    print(f"Received email: {email}, password: {password}")
     
     # Simuler la vérification des identifiants
     if email == 'john@example.com' and password == 'password123':

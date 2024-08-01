@@ -47,6 +47,23 @@
     <footer>
         <p>© 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function getCookie(name) {
+                let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (match) return match[2];
+            }
+
+            const jwt = getCookie('jwt');
+            if (jwt) {
+                document.getElementById('login-link').style.display = 'none';
+                // Montrez d'autres éléments pour les utilisateurs connectés
+            } else {
+                document.getElementById('login-link').style.display = 'block';
+                // Masquez d'autres éléments pour les utilisateurs non connectés
+            }
+        });
+    </script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

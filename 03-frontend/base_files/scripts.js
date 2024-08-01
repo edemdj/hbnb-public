@@ -1,39 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            try {
-                const response = await loginUser(email, password);
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-                if (response.ok) {
-                    const data = await response.json();
-                    document.cookie = `token=${data.access_token}; path=/`;
-                    window.location.href = 'index.html';
-                } else {
-                    const errorData = await response.json();
-                    alert('Login failed: ' + errorData.message || response.statusText);
-                }
-            } catch (error) {
-                console.error('Error during login:', error);
-                alert('An error occurred during login.');
-            }
-        });
-    }
-});
-
-async function loginUser(email, password) {
-    return fetch('http://localhost:8000/login.html', {
+    fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email: email, password: password })
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Invalid credentials');
+        }
+    })
+    .then(data => {
+        document.cookie = `jwt=${data.access_token}; path=/`;
+        window.location.href = '/';
+    })
+    .catch(error => {
+        document.getElementById('error-message').textContent = error.message;
     });
-}
-
+});
